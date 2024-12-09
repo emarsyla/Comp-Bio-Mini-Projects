@@ -1,0 +1,8 @@
+There were 176 haplotypes sequenced in the finninsh population, and 176 Haplotypes sequenced in the yoruba population
+The counts for the top three most common haplotypes in the finnish population are [41, 13, 8] While the counts of the 
+top most common haplotypes in the yoruba population are [5, 3, 3]
+The lactase persitance allele for finnish are ['A', 'A', 'A'] 
+and ['G', 'G', 'G'] for yoruba. I think that these results are consistent with selection on lactase region.
+This is because in the finnish milk drinking population, there is one haplotype that is majorly favored. In the yoruba non milk drinking oopulation,
+it does not seem like there is one haplotype that is majorly favored. The fact that the nucleotides are different for the haplotypes in the yoruba vs finnish populations
+also suggests that the mutations from G to A may have been advantageous for breaking down lactose.
