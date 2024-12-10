@@ -1,0 +1,43 @@
+Solution tuple format: ((node, leftNode, placement branch or node, spnode), (node, rightNode, placement branch or node, spnode), event, losses).  
+If horizontal transfer: ((node, leftNode, placement branch or node, spnode, left event), (node, rightNode, placement branch or node, spnode, left event), event, losses)
+Bt modifies a list to have the initial node, and the the placements of the two subnodes for each item of list. It uses recursion so starting with initial placement until hitting a tip.
+
+Test A: 
+Minimum cost: 1
+Cospeciation : (Node  i ,  Node I ) --> (node  h ,  Node H ) (node  e ,  Node E )
+Cospeciation : (Node  h ,  Node H ) --> (node  f ,  Node F ) (node  d ,  Node D )
+gene loss at node G
+Cospeciation : (Node  f ,  Node F ) --> (node  a ,  Node A ) (node  b ,  Node B )
+
+Test B:
+Minimum cost: 1
+Cospeciation : (Node  g ,  Node G ) --> (node  e ,  Node E ) (node  f ,  Branch C )
+Cospeciation : (Node  e ,  Node E ) --> (node  a ,  Node A ) (node  b ,  Node B )
+Duplication : (Node  f ,  Branch C ) --> (node  c1 ,  Node C ) (node  c2 ,  Node C )
+
+Test C:
+Minimum cost: 2
+Cospeciation : (Node  k ,  Node K ) -->  (node  h ,  Node H )  (node  j ,  Node J )
+Cospeciation : (Node  h ,  Node H ) -->  (node  a ,  Node A )  (node  c ,  Node C )
+gene loss at node G
+Cospeciation : (Node  j ,  Node J ) -->  (node  m ,  Branch D )  (node  i ,  Node I )
+Horizontal Transfer : (Node  m ,  Branch D ) --> transfer to (node  b ,  Node B ) normal descent to (node  d ,  Node D )
+Cospeciation : (Node  i ,  Node I ) -->  (node  e ,  Node E )  (node  f ,  Node F )
+
+Test D: 
+Minimum cost: 3
+Duplication : (Node  j ,  Branch I ) --> (node  i ,  Node I ) (node  g2 ,  Node G )
+gene loss at node H
+gene loss at node I
+Cospeciation : (Node  i ,  Node I ) --> (node  f ,  Node F ) (node  h ,  Node H )
+Cospeciation : (Node  f ,  Node F ) --> (node  a ,  Node A ) (node  b ,  Node B )
+Cospeciation : (Node  h ,  Node H ) --> (node  g1 ,  Node G ) (node  c ,  Node C )
+Cospeciation : (Node  g1 ,  Node G ) --> (node  d1 ,  Node D ) (node  e1 ,  Node E )
+Cospeciation : (Node  g2 ,  Node G ) --> (node  d2 ,  Node D ) (node  e2 ,  Node E )
+
+Test E: 
+Minimum cost: 1
+Cospeciation : (Node  h ,  Node Z ) --> (node  f ,  Node W ) (node  g ,  Node Y )
+Cospeciation : (Node  f ,  Node W ) --> (node  a ,  Node A ) (node  b ,  Node B )
+Cospeciation : (Node  g ,  Node Y ) --> (node  c ,  Node C ) (node  e ,  Node E )
+gene loss at node X
